@@ -1,0 +1,9 @@
+distances: 
+  28m: 28
+  56m: 56
+  84m: 84
+  112m: 112
+angles: 
+  0deg: 0
+  45deg: 45
+  90deg: 90

@@ -1,0 +1,25 @@
+targets:
+  car:
+    width: 1.8
+    length: 4.060
+    height: 1.43
+  bike:
+    width: 0.75
+    length: 1.75
+    height: 2
+  pedestrian:
+    width: 0.5
+    length: 0.5
+    height: 1.8
+  lidar:
+    width: 0.5
+    length: 0.5
+    height: 1.8
+  camera:
+    width: 1.5
+    length: 0.1
+    height: 1.8
+  radar:
+    width: 0.25
+    length: 0.25
+    height: 0.25
