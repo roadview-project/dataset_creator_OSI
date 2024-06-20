@@ -14,8 +14,23 @@ when executed it will generate the osi files in the specified folder from the sp
 
 Suggestion, check out the [parallel project](https://doi.org/10.5281/zenodo.1146014) and usage, it is quite benefitial when working with more than one bag.
 
-Acknoledgment
+# Citation
 
-Funded by the European Union (grant no. 101069576). Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or European Climate, Infrastructure and Environment Executive Agency (CINEA). Neither the European Union nor the granting authority can be held responsible for them.
+```
+@Journal{
+  title = {REHEARSE: adveRse wEatHEr datAset for sensoRy noiSe modEls},
+	author = {Poledna,Yuri and Drechsler, Maikol Funk and Valentina Donzella and Pak Hung Chan and Pierre Duthon  and Huber, Werner},
+	booktitle = {Intelligent Vehicles Symposium 2024 - Jeju Island South Korea},
+	year = {},
+	volume = {},
+	number = {},
+	pages = {},
+	doi = {waiting publishing to be here :)},
+}
+```
+
+# Acknoledgment
+
+Co-Funded by the European Union (grant no. 101069576). Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or European Climate, Infrastructure and Environment Executive Agency (CINEA). Neither the European Union nor the granting authority can be held responsible for them.
 
 UK and Swiss participants in this project are supported by Innovate UK (contract no. 10045139) and the Swiss State Secretariat for Education, Research and Innovation (contract no. 22.00123) respectively.
