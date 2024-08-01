@@ -17,15 +17,17 @@ Suggestion, check out the [parallel project](https://doi.org/10.5281/zenodo.1146
 # Citation
 
 ```
-@Journal{
-  title = {REHEARSE: adveRse wEatHEr datAset for sensoRy noiSe modEls},
-	author = {Poledna,Yuri and Drechsler, Maikol Funk and Valentina Donzella and Pak Hung Chan and Pierre Duthon  and Huber, Werner},
-	booktitle = {Intelligent Vehicles Symposium 2024 - Jeju Island South Korea},
-	year = {},
-	volume = {},
-	number = {},
-	pages = {},
-	doi = {waiting publishing to be here :)},
+@INPROCEEDINGS{10588491,
+  author={Poledna, Yuri and Drechsler, Maikol Funk and Donzella, Valentina and Chan, Pak Hung and Duthon, Pierre and Huber, Werner},
+  booktitle={2024 IEEE Intelligent Vehicles Symposium (IV)}, 
+  title={REHEARSE: adveRse wEatHEr datAset for sensoRy noiSe modEls}, 
+  year={2024},
+  volume={},
+  number={},
+  pages={2451-2457},
+  keywords={Point cloud compression;Rain;Laser radar;Noise;Radar;Open systems;Sensor phenomena and characterization},
+  doi={10.1109/IV55156.2024.10588491}}
+
 }
 ```
 
