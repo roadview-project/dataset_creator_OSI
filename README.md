@@ -1,18 +1,54 @@
 # Dataset Creator OSI
 
-this package exists to make usage of a rosbag data collection and convert it to OSI files.
+This package converts ROS bag sensor recordings into [ASAM OSI](https://opensimulationinterface.github.io/osi-documentation/) protobuf data stored in spec-compliant [MCAP](https://mcap.dev/) multi-trace container files.
 
-first step is to create a yaml descriptor file of your sensors, to do that use config_creator.py
+It is part of the [REHEARSE](https://doi.org/10.1109/IV55156.2024.10588491) project for adverse weather sensor noise models.
 
-The yaml files describe how the datasetcreator file will work.
+## Installation
 
-it is of great importance to have the names of the classes equal to those created in the package. if the type is a Camera, put Camera in type. not camera, or cAmeRA.
+```bash
+pip install -r requirements.txt
+```
 
-The main file is dataset_creator.py
+The `asam-osi-utilities` package provides bundled `osi3` protobuf bindings — no separate OSI installation needed.
 
-when executed it will generate the osi files in the specified folder from the specified rosbag.
+## Usage
 
-Suggestion, check out the [parallel project](https://doi.org/10.5281/zenodo.1146014) and usage, it is quite benefitial when working with more than one bag.
+### Step 1: Create sensor config
+
+```bash
+python3 config_creator.py path/to/bag.bag
+```
+
+This interactive tool reads a rosbag and generates a `config.yaml` describing its sensors.
+
+### Step 2: Convert to MCAP
+
+```bash
+python3 dataset_creator.py config.yaml targets.yaml output_dir/ path/to/bag.bag
+```
+
+Optional flags:
+- `--include-raw` — Embed original ROS messages alongside OSI channels in the MCAP file
+
+### Output
+
+A single `.mcap` file per bag containing:
+- One OSI channel per sensor (Camera → `SensorData`, Lidar → `SensorData`, Radar → `SensorData`)
+- Optional `GroundTruth` channel for static target data
+- Optional raw ROS channels (with `--include-raw`)
+- zstd compression (level 19), 32 MiB chunks
+- Full ASAM OSI MCAP spec compliance (metadata, schemas, channel metadata)
+
+## Sensor Types
+
+Sensor class names must match filenames exactly (e.g., class `Camera` in `Camera.py`). Classes are loaded dynamically via `importlib` based on the `sensor_type` field in `config.yaml`.
+
+## Config YAML Structure
+
+Top-level keys are sensor names. Each sensor has `sensor_type`, `topic`, and `mounting_position`. Camera sensors additionally have `image_resolution_horizontal` and `image_resolution_vertical`.
+
+Suggestion: check out the [parallel project](https://doi.org/10.5281/zenodo.1146014) for batch processing multiple bags.
 
 # Citation
 

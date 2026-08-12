@@ -2,3 +2,6 @@ config.yaml
 __pycache__/
 temp/
 *.tar.gz
+.venv/
+.playground/
+test_data/
